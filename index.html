@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html class="us signed-out dynamic_homes dynamic_homes-show responsive">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cafe65</title>
+<!-- pavicon [ -->
+<link rel="apple-touch-icon" sizes="57x57" href="resource/icon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="resource/icon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="resource/icon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="resource/icon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="resource/icon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="resource/icon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="resource/icon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="resource/icon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="resource/icon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="resource/icon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="resource/icon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96"	href="resource/icon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16"	href="resource/icon/favicon-16x16.png">
+<link rel="manifest" href="resource/icon/manifest.json">
+<!--  ] pavicon -->
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="resource/icon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" media="all" href="resource/css/cafe65.css">
+<link rel="stylesheet" media="all" href="resource/css/franchiser.css">
+<link rel="stylesheet" href="resource/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css">
+<script type="text/javascript" src="resource/js/jquery.js"></script>
+<script type="text/javascript" src="resource/js/popper.js"></script>
+<script type="text/javascript" src="resource/js/bootstrap.js"></script>
+<script type="text/javascript">
+$(init);
+
+function init() {
+	// event handler 수동 실행
+	$('#mobile-menu').trigger('click');
+	
+	// 모바일 메뉴 onclick event handler
+	$('#mobile-menu').on('click', function() {
+		var isShow = $('#responsive-menu').hasClass('responsive-menu');
+		
+		if(isShow) {
+			toggleMobileMenu(false);
+			$('#responsive-menu').removeClass('responsive-menu');
+			$('#body-container').removeClass('content');
+			
+		} else {
+			toggleMobileMenu(true);
+			$('#responsive-menu').addClass('responsive-menu');
+			$('#body-container').addClass('content');
+		}
+	});
+
+	// 자주 묻는 질문
+	faq();
+	
+}
+
+function showLayerPopup() {	
+	var cookiedata = document.cookie;    
+	if ( cookiedata.indexOf("maindiv=done") < 0 ) {  
+	    document.all['divpop'].style.visibility = 'visible';
+	} else { 
+		document.all['divpop'].style.visibility = 'hidden'; 
+	} 
+}
+
+//모바일 메뉴 노출 여부
+function toggleMobileMenu(isShow) {
+	var attr = 'none';
+	
+	if(isShow) {
+		attr = 'block';
+	}
+	
+	$('#responsive-menu').css('display', attr);
+	$('#responsive-menu').css('height', '1000px');
+	$('#responsive-menu').css('left', '0');
+	
+}
+
+// 자주 묻는 질문
+function faq() {
+	var acc = document.getElementsByClassName("accordion");
+	var i;
+
+	for (i = 0; i < acc.length; i++) {
+		acc[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var panel = this.nextElementSibling;
+			if (panel.style.display === "inline-block") {
+				panel.style.display = "none";
+			} else {
+				panel.style.display = "inline-block";
+			}
+		});
+	}
+}
+
+// 팝업
+function setCookie(name, value, expiredays) { 
+	var todayDate = new Date(); 
+   
+	todayDate.setDate(todayDate.getDate() + expiredays); 
+	document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";" 
+}
+	    
+function closeWin() { 
+    if (document.notice_form.chkbox.checked){ 
+        setCookie("maindiv","done",1); 
+    } 
+
+    document.all['divpop'].style.visibility = "hidden"; 
+} 
+
+function goHome() {
+	location.href = 'index.html';
+}
+</script>
+</head>
+<body class="pos-rel us signed-out dynamic_homes dynamic_homes-show responsive">
+	<!-----------------------------------------  1. float  ------------------------------------------------->
+	<div class="float">
+		<a href="tel:1811-7836">
+		<span class="f-color">가맹문의<br>1811-7836
+		</span>
+		</a>
+	</div>
+	<!----------------------------------------- [ header ] ------------------------------------------------->
+	<div class="header no-print dn dn-l bg-white-85 pos-abs left-0 top-0 h-100 z-index-999"></div>
+	<nav class="no-print bb b--light-silver ph20 ph50-l dt dt-auto-l nav-menu-fix h-position">
+		<div class="dtc v-mid tl wi-34 wi1-l pos-rel"></div>
+		<!-- 브랜드로고 -->
+		<div class="dtc v-mid tc wi-34 wi-10-l pr15-l">
+			<div class="pavicon-logo" onclick="goHome();"></div>
+		</div>
+		<!-- 모바일 햄버거 아이콘 -->
+		<div class="dtc v-mid tr wi-34 dn-l" id="mobile-menu" >
+			<span class="js-menu-icon fill-gray cur-pointer">
+				<svg width="25" height="18" class="dib v-mid" viewBox="0 0 25 18" xmlns="http://www.w3.org/2000/svg">
+					<title>Menu Icon</title>
+					<path d="M0 0v2.778h25V0H0zm0 7.407v2.778h25V7.407H0zm0 7.408v2.778h25v-2.778H0z" fill-rule="evenodd"></path>
+				</svg> 
+			</span>
+		</div>
+				<!-- 모바일 메뉴 -->
+		<div id="responsive-menu" style="display: none;">
+			<div id="responsive-menu-title">
+				<a href="" target="_self">CAFE 65 ℃ </a>
+			</div>
+			<div class="responsive-menu-container">
+				<ul id="responsive-menu-order" >
+					<li class="menu-item">
+						<span class="toggle-down"></span>
+						<a href="franchiser.html">프 랜 차 이 즈</a>
+					</li>
+					<li class="menu-item">
+						<span class="toggle-down"></span>
+						<a href="index.html">회 사 소 개</a>
+					</li>
+					<li class="menu-item">
+						<span class="toggle-down"></span>
+						<a href="store.html">매 장 안 내</a>
+					</li>
+					<li class="menu-item">
+						<span class="toggle-down"></span>
+						<a href="menu.html">메 뉴 안 내</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	<!----------------------------------------- 2. 메뉴 category  ---------------------------------------------->
+		<div class="category dn nav-responsive-container js-mobile-menu">
+			<div class="dt-l wi-100-l">
+				<div class="categories dtc-l pt10 pt0-l v-mid">
+					<div class="franchiser nav-parent-container">
+						<a class="nav-parent-link blue-text-link heap-nav-subscribe-cta" href="franchiser.html">프랜차이즈</a>
+					</div>
+					<div class="company nav-parent-container js-shop-menu">
+						<a class="nav-parent-link" href="index.html">회사소개</a>
+						<!-- toggle -->
+						<div class="fr pv10 pl0-l dn-l cur-pointer">
+							<span class="js-expand-carot dn-l">
+								<svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
+										<title>Expand Arrow</title>
+								<path d="M4.27 5.097L0 .827.827 0l4.27 4.27L9.174.196 10 1.02 5.098 5.924z" fill-rule="evenodd"></path>
+								</svg>
+							</span>
+							<span class="js-collapse-carot dn dn-l">
+								<svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
+										<title>Collapse Arrow</title>
+								<path d="M4.27.826L0 5.097l.827.827 4.27-4.271 4.076 4.076.827-.826L5.098 0z" fill-rule="evenodd"></path>
+								</svg> 
+							</span>
+						</div>
+						<ul class="nav-child-container dn rounded-br-10">
+							<li><a href="index.html">회사소개</a></li>
+						</ul>
+					</div>
+					<div class="store nav-parent-container">
+						<div class="nav-parent-link">매장안내</div>
+						<!-- toggle -->
+						<div class="fr pv10 pl5 pl0-l dn-l cur-pointer">
+							<span class="js-expand-carot dn-l">
+								<svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
+									<title>Expand Arrow</title>
+									<path d="M4.27 5.097L0 .827.827 0l4.27 4.27L9.174.196 10 1.02 5.098 5.924z" fill-rule="evenodd"></path>
+								</svg> 
+							</span>
+							<span class="js-collapse-carot dn dn-l">
+								<svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
+									<title>Collapse Arrow</title>
+									<path d="M4.27.826L0 5.097l.827.827 4.27-4.271 4.076 4.076.827-.826L5.098 0z" fill-rule="evenodd"></path>
+								</svg> 
+							</span>
+						</div>
+						<ul class="nav-child-container dn rounded-br-10">
+							<li><a href="store.html#store1" alt="부천 남부역점">남부역점</a></li>
+							<li><a href="store.html#store2" alt="부천 범박점">범박점</a></li>
+							<li><a href="store.html#store3" alt="부천 상동점">상동점</a></li>
+							<li><a href="store.html#store4" alt="인천 가좌점">가좌점</a></li>
+							<li><a href="store.html#store5" alt="인천 계양점">계양점</a></li>
+							<li><a href="store.html#store6" alt="인천 계양구청점">계양구청점</a></li>
+							<li><a href="store.html#store7" alt="인천 도화하늘점">도화하늘점</a></li>
+							<li><a href="store.html#store8" alt="인천 부개점">부개점</a></li>
+							<li><a href="store.html#store9" alt="인천 부평점">부평점</a></li>
+							<li><a href="store.html#store10" alt="인천 부평시장점">부평시장점</a></li>
+							<li><a href="store.html#store11" alt="인천 산곡점">산곡점</a></li>
+							<li><a href="store.html#store12" alt="인천 삼산점">삼산점</a></li>
+							<li><a href="store.html#store13" alt="인천 시청점">인청시청점</a></li>
+							<li><a href="store.html#store14" alt="인천 청라점">청라점</a></li>
+							<li><a href="store.html#store15" alt="의정부 민락점">민락점</a></li>
+						</ul>
+					</div>
+					<div class="menus nav-parent-container">
+						<div class="nav-parent-link">메뉴안내</div>
+						<!-- toggle -->
+						<div class="fr pv10 pl5 pl0-l dn-l cur-pointer">
+							<span class="js-expand-carot dn-l">
+								<svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
+									<title>Expand Arrow</title>
+									<path d="M4.27 5.097L0 .827.827 0l4.27 4.27L9.174.196 10 1.02 5.098 5.924z" fill-rule="evenodd"></path>
+								</svg> 
+							</span>
+							<span class="js-collapse-carot dn dn-l">
+								<svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
+									<title>Collapse Arrow</title>
+									<path d="M4.27.826L0 5.097l.827.827 4.27-4.271 4.076 4.076.827-.826L5.098 0z" fill-rule="evenodd"></path>
+								</svg> 
+							</span>
+						</div>
+						<ul class="nav-child-container dn rounded-br-10">
+							<li><a href="menu.html#coffee1">COFFEE</a></li>
+							<li><a href="menu.html#beverage1">BEVERAGE</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="sign-in-out dtc-l v-mid tr-l">			
+					<div class="nav-parent-container">
+						<a class="nav-parent-link" href="/sign_in/new">로그인</a>
+					</div>
+					<div class="nav-parent-container">
+						<a class="nav-parent-link" href="/careers">회원가입</a>
+					</div>  
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!--------------------------------------------- [ container ] -------------------------------------------->
+	<div class="container primary" id="body-container">
+	<!----------------------------------------- 3. img slide  ------------------------------------------------>		
+		<!-- img slide -->
+		<div id="demo" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			<ul class="carousel-indicators">
+				<li data-target="#demo" data-slide-to="0" class="active"></li>
+				<li data-target="#demo" data-slide-to="1"></li>
+				<li data-target="#demo" data-slide-to="2"></li>
+			</ul>
+			<!-- The slideshow -->
+			<div class="carousel-inner">
+				<div class="carousel-item carousel-wh active">
+					<img src="resource/img/cafe65_1200_01.jpg" alt="image1" style="width: 1100px; height: auto;">
+				</div>
+				<div class="carousel-item">
+					<img src="resource/img/cafe65_1200_16.jpg" alt="image2">
+				</div>
+				<div class="carousel-item">
+					<img src="resource/img/cafe65_1200_03.jpg" alt="image3">
+				</div>
+			</div>
+			<!-- Left and right controls -->
+			<a class="carousel-control-prev" href="#demo" data-slide="prev">
+				<span style="width: 50px; height: 50px;">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+						<g>
+							<path fill="white" d="M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z" />
+						</g>
+					</svg>
+				</span>
+			</a>
+			<a class="carousel-control-next" href="#demo" data-slide="next">
+				<span style="width: 50px; height: 50px;">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+						<g>
+							<path fill="white" d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z" />
+						</g>
+					</svg>
+				</span>
+			</a>
+		</div>
+		 
+	<!----------------------------------------- 4. message  -------------------------------------------------->
+		<div class="mb60 mv60-ns ph20 ph0-ns">
+			<hr>
+				<div class="mw7 u-center tc pv20 pv40-ns ph20 ph0-l">
+					<div class="f6 ls-1-5 light-bold uppercase mb20 lh-copy mid-gray font-let-spa-2">No Name</div>
+					<div class="f2-ns f4 lh-copy italic serif-font">
+						<span class="mid-gray pr10 v-mid dib mt10 f1 f60-ns lh-zero">“</span>
+						<span class="mid-gray font-let-spa-1"> The best degree for a cup of coffee is 65℃</span>
+						<span class="mid-gray pl5 v-mid dib mt10 f1 f60-ns lh-zero">”</span>
+					</div>
+					<div class="mt20 uppercase ls-1-5 light-bold">
+						<a class="blue-text-link heap-homepage-quote-cta font-let-spa-1" href="menu.html">카페 65℃ 커피와 음료 보러가기</a>
+					</div>
+				</div>
+			<hr>
+		</div>
+	 
+	<!----------------------------------------- 5. double photo  --------------------------------------------->	
+		<div class="mw-container u-center ph0 ph20-m mt10">
+			<div class="grid-row jc-center jc-start-ns edge semi-compact-ns mb0 mb30-ns">
+				<div class="grid-col grid-col-1 grid-col-2-ns tc edge semi-compact-ns mb40 mb0-ns">
+					<a class="heap-top-left-module db pos-rel" href="/preparation-guides">
+						<div class="h-bg-330-ns h-bg-250 bg-no-repeat bg-size-cover" style="background-image: url(resource/img/cafe65_1200_11.jpg)">
+							<div class="wi-100 h-100 bg-black-15-hover pos-abs top-0 left-0 all-transition-200"></div>
+						</div>
+					</a>
+					<a class="gray gray-hover no-underline heap-top-left-module" href="/preparation-guides">
+						<div class="ph20 ph0-ns">
+							<div class="f4 f3-ns mt20 lh-title ls0">Coffee Story</div>
+							<div class="f5 mt10 ls0">카페 65도씨 이야기</div>
+						</div>
+					</a>
+				</div>
+				<div class="grid-col grid-col-1 grid-col-2-ns tc edge semi-compact-ns mb40 mb0-ns">
+					<a class="heap-top-right-module db pos-rel" href="/cafes">
+						<div class="h-bg-330-ns h-bg-250 bg-no-repeat bg-size-cover" style="background-image: url(resource/img/cafe65_1200_06.jpg)">
+							<div class="wi-100 h-100 bg-black-15-hover pos-abs top-0 left-0 all-transition-200"></div>
+						</div>
+					</a>
+					<a class="gray gray-hover no-underline heap-top-right-module" href="store.html">
+						<div class="ph20 ph0-ns">
+							<div class="f4 f3-ns mt20 lh-title ls0">Cafe Location</div>
+							<div class="f5 mt10 ls0">좋아하는 65℃ 를 찾아보세요.</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+
+	<!----------------------------------------- 6. FAQ  ----------------------------------------------------->		
+		<div class="ph20 ph0-ns">
+			<hr class="mb60">
+		</div>
+		<div class="tc f3 f2-ns mb10 lh-title ph20">Cafe 65 가맹문의</div>
+		<div class="p-rl-20 tc">
+			<button class="accordion">FAQ 1. 자영업 경험이 없어도 카페 운영이 가능한가요? </button>
+			<div class="panel">
+				<p class="font-let-spa-0 tl pl-100 pr-100">본사의 체계적인 매장 운영 매뉴얼 교육(음료 제조, 서비스, 세무)을 이수하시면, 초보자분도 얼마든지 매장 운영이 가능하도록 도와드립니다. <br> 
+				또한 매장 오픈 시 담당 슈퍼바이저의 경영 지원으로 매장 운영 및 매장 활성화에 도움을 드리고 있습니다. <br><br> 
+				</p>
+			</div>
+			<button class="accordion">FAQ 2. 점포 상권 분석은 어떻게 이루어 지나요? </button>
+			<div class="panel">
+				<p class="font-let-spa-0 tl pl-100 pr-100">점포 소유 : 본사 점포개발팀에서 상권을 철저히 분석(주변환경, 유동인구, 접근성, 임대료 등)하여, 입점 가능여부와 예상매출 수익을 면밀히 검토한 후 가맹점주님과 협의하여 선정합니다. <br><br>
+				점포 무소유 : 본사 점포개발팀에서 가맹점주님의 입점 희망지역과 예상 투자금액을 고려하여 입점 가능 점포를 선정한 후 경쟁업종 또는 추후 경쟁업종의 출점을 예측하고, 대응하여 리스크가 가장적은 매장이 되도록 컨설팅 합니다. <br><br>
+				</p>
+			</div>
+			<button class="accordion">FAQ 3. 매장 규모가 8평 이하도 창업이 가능한가요? </button>
+			<div class="panel">
+				<p class="font-let-spa-0 tl pl-100 pr-100">
+				테이크아웃 전문점을 오픈을 원하신다면 8평 이하의 매장 규모로도 창업이 가능합니다. <br>
+				특수상권(백화점, 대형마트, 병원, 학교, 지하상가 등)을 제외한 일반적인 상권에서는 쾌적한 주방환경과 고객의 편의를 위해 8평 이상 규모의 점포를 권장드립니다. <br><br>
+				</p>
+			</div>
+		</div>
+	
+	<!----------------------------------------- 7.video  ----------------------------------------------------->			
+		<div class="ph20 ph0-ns">
+			<hr class="mt40 mb60">
+		</div>	
+		
+		<div class="div-video">
+			<div class="div-video-title">cafe65℃ 소개영상</div>
+				<iframe seamless width="100%" height="500" src="https://www.youtube.com/embed/QPOREAoeXy8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen autoplay controls>Cafe65 인트로 영상입니다.</iframe>
+		</div>
+		<div class="ph20 ph0-ns"></div>
+	 <!----------------------------------------- 0.POPUP ----------------------------------------------------->			
+		<div id="divpop" class="pop-position pop-position-ns"> 
+			<form name="notice_form"> 
+				<div class="pop-width-height pop-width-height-ns"> 
+					<div> 
+					    <div class="pop-bor-bg-tac pop-bor-bg-tac-ns">  
+					   		<img src="resource/img/cafe65_600_03.jpg" alt="popup-1">
+					   		<p>cafe65℃ 가맹문의 1811-7836</p>
+					    </div> 
+					</div> 
+					<div> 
+					    <div class="pop-borc-tar pop-borc-tar-ns"> 
+						    <input type="checkbox" name="chkbox" value="checkbox">오늘 하루 이 창을 열지 않음 
+						    <a href="#" onclick="closeWin();"><B>[닫기]</B></a> 
+					    </div> 
+				    </div>
+				</div> 
+			</form>
+		</div>
+	</div>  
+	</body>
+</html>

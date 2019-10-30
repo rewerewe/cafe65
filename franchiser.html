@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html class="us signed-out dynamic_homes dynamic_homes-show responsive">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cafe65</title>
+<!-- pavicon [ -->
+<link rel="apple-touch-icon" sizes="57x57" href="resource/icon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="resource/icon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="resource/icon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="resource/icon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="resource/icon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="resource/icon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="resource/icon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="resource/icon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="resource/icon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="resource/icon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="resource/icon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96"	href="resource/icon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16"	href="resource/icon/favicon-16x16.png">
+<link rel="manifest" href="resource/icon/manifest.json">
+<!--  ] pavicon -->
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="resource/icon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" media="all" href="resource/css/cafe65.css">
+<link rel="stylesheet" media="all" href="resource/css/franchiser.css">
+<link rel="stylesheet" href="resource/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css">
+<script type="text/javascript" src="resource/js/jquery.js"></script>
+<script type="text/javascript" src="resource/js/popper.js"></script>
+<script type="text/javascript" src="resource/js/bootstrap.js"></script>
+<script type="text/javascript">
+$(init);
+
+function init() {
+	// event handler 수동 실행
+	$('#mobile-menu').trigger('click');
+	
+	// 모바일 메뉴 onclick event handler
+	$('#mobile-menu').on('click', function() {
+		var isShow = $('#responsive-menu').hasClass('responsive-menu');
+		
+		if(isShow) {
+			toggleMobileMenu(false);
+			$('#responsive-menu').removeClass('responsive-menu');
+		} else {
+			toggleMobileMenu(true);
+			$('#responsive-menu').addClass('responsive-menu');
+		}
+	});
+
+	// 자주 묻는 질문
+	faq();
+	
+}
+
+function showLayerPopup() {	
+	var cookiedata = document.cookie;    
+	if ( cookiedata.indexOf("maindiv=done") < 0 ) {  
+	    document.all['divpop'].style.visibility = 'visible';
+	} else { 
+		document.all['divpop'].style.visibility = 'hidden'; 
+	} 
+}
+
+//모바일 메뉴 노출 여부
+function toggleMobileMenu(isShow) {
+	var attr = 'none';
+	
+	if(isShow) {
+		attr = 'block';
+	}
+	
+	$('#responsive-menu').css('display', attr);
+	$('#responsive-menu').css('height', '1000px');
+	$('#responsive-menu').css('left', '0');
+	
+}
+
+// 자주 묻는 질문
+function faq() {
+	var acc = document.getElementsByClassName("accordion");
+	var i;
+
+	for (i = 0; i < acc.length; i++) {
+		acc[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var panel = this.nextElementSibling;
+			if (panel.style.display === "inline-block") {
+				panel.style.display = "none";
+			} else {
+				panel.style.display = "inline-block";
+			}
+		});
+	}
+}
+
+// 팝업
+function setCookie(name, value, expiredays) { 
+	var todayDate = new Date(); 
+   
+	todayDate.setDate(todayDate.getDate() + expiredays); 
+	document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";" 
+}
+	    
+function closeWin() { 
+    if (document.notice_form.chkbox.checked){ 
+        setCookie("maindiv","done",1); 
+    } 
+
+    document.all['divpop'].style.visibility = "hidden"; 
+} 
+
+function goHome() {
+	location.href = 'index.html';
+}
+</script>
+</head>
+<body class="pos-rel us signed-out dynamic_homes dynamic_homes-show responsive">
+<!-----------------------------------------  1. float  ------------------------------------------------->
+	<div class="float">
+		<a href="tel:1811-7836">
+		<span class="f-color">가맹문의<br>1811-7836
+		</span>
+		</a>
+	</div>
+	<!----------------------------------------- [ header ] ------------------------------------------------->
+	<div class="header no-print dn dn-l bg-white-85 pos-abs left-0 top-0 h-100 z-index-999"></div>
+	<nav class="no-print bb b--light-silver ph20 ph50-l dt dt-auto-l nav-menu-fix h-position">
+		<div class="dtc v-mid tl wi-34 wi1-l pos-rel"></div>
+		<!-- 브랜드로고 -->
+		<div class="dtc v-mid tc wi-34 wi-10-l pr15-l">
+			<div class="pavicon-logo" onclick="goHome();"></div>
+		</div>
+		<!-- 모바일 햄버거 아이콘 -->
+		<div class="dtc v-mid tr wi-34 dn-l" id="mobile-menu" >
+			<span class="js-menu-icon fill-gray cur-pointer">
+				<svg width="25" height="18" class="dib v-mid" viewBox="0 0 25 18" xmlns="http://www.w3.org/2000/svg">
+					<title>Menu Icon</title>
+					<path d="M0 0v2.778h25V0H0zm0 7.407v2.778h25V7.407H0zm0 7.408v2.778h25v-2.778H0z" fill-rule="evenodd"></path>
+				</svg> 
+			</span>
+		</div>
+		<!-- 모바일 메뉴 -->
+		<div id="responsive-menu" style="display: none;">
+			<div id="responsive-menu-title">
+				<a href="" target="_self">CAFE 65 ℃ </a>
+			</div>
+			<div class="responsive-menu-container">
+				<ul id="responsive-menu-order" >
+					<li class="menu-item">
+						<span class="toggle-down"></span>
+						<a href="franchiser.html">프 랜 차 이 즈</a>
+					</li>
+					<li class="menu-item">
+						<span class="toggle-down"></span>
+						<a href="index.html">회 사 소 개</a>
+					</li>
+					<li class="menu-item">
+						<span class="toggle-down"></span>
+						<a href="store.html">매 장 안 내</a>
+					</li>
+					<li class="menu-item">
+						<span class="toggle-down"></span>
+						<a href="menu.html">메 뉴 안 내</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	<!----------------------------------------- 2. 메뉴 category  ------------------------------------------------->
+		<div class="category dn nav-responsive-container js-mobile-menu">
+			<div class="dt-l wi-100-l">
+				<div class="categories dtc-l pt10 pt0-l v-mid">
+					<div class="franchiser nav-parent-container">
+						<a class="nav-parent-link blue-text-link heap-nav-subscribe-cta" href="franchiser.html">프랜차이즈</a>
+					</div>
+					<div class="company nav-parent-container js-shop-menu">
+						<a class="nav-parent-link" href="index.html">회사소개</a>
+						<!-- toggle -->
+						<div class="fr pv10 pl0-l dn-l cur-pointer">
+							<span class="js-expand-carot dn-l">
+								<svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
+										<title>Expand Arrow</title>
+								<path d="M4.27 5.097L0 .827.827 0l4.27 4.27L9.174.196 10 1.02 5.098 5.924z" fill-rule="evenodd"></path>
+								</svg>
+							</span>
+							<span class="js-collapse-carot dn dn-l">
+								<svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
+										<title>Collapse Arrow</title>
+								<path d="M4.27.826L0 5.097l.827.827 4.27-4.271 4.076 4.076.827-.826L5.098 0z" fill-rule="evenodd"></path>
+								</svg> 
+							</span>
+						</div>
+						<ul class="nav-child-container dn rounded-br-10">
+							<li><a href="index.html">회사소개</a></li>
+						</ul>
+					</div>
+					<div class="store nav-parent-container">
+						<div class="nav-parent-link">매장안내</div>
+						<!-- toggle -->
+						<div class="fr pv10 pl5 pl0-l dn-l cur-pointer">
+							<span class="js-expand-carot dn-l">
+								<svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
+									<title>Expand Arrow</title>
+									<path d="M4.27 5.097L0 .827.827 0l4.27 4.27L9.174.196 10 1.02 5.098 5.924z" fill-rule="evenodd"></path>
+								</svg> 
+							</span>
+							
+							<span class="js-collapse-carot dn dn-l">
+								<svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
+									<title>Collapse Arrow</title>
+									<path d="M4.27.826L0 5.097l.827.827 4.27-4.271 4.076 4.076.827-.826L5.098 0z" fill-rule="evenodd"></path>
+								</svg> 
+							</span>
+						</div>
+						<ul class="nav-child-container dn rounded-br-10">
+							<li><a href="store.html#store1" alt="부천 남부역점">남부역점</a></li>
+							<li><a href="store.html#store2" alt="부천 범박점">범박점</a></li>
+							<li><a href="store.html#store3" alt="부천 상동점">상동점</a></li>
+							<li><a href="store.html#store4" alt="인천 가좌점">가좌점</a></li>
+							<li><a href="store.html#store5" alt="인천 계양점">계양점</a></li>
+							<li><a href="store.html#store6" alt="인천 계양구청점">계양구청점</a></li>
+							<li><a href="store.html#store7" alt="인천 도화하늘점">도화하늘점</a></li>
+							<li><a href="store.html#store8" alt="인천 부개점">부개점</a></li>
+							<li><a href="store.html#store9" alt="인천 부평점">부평점</a></li>
+							<li><a href="store.html#store10" alt="인천 부평시장점">부평시장점</a></li>
+							<li><a href="store.html#store11" alt="인천 산곡점">산곡점</a></li>
+							<li><a href="store.html#store12" alt="인천 삼산점">삼산점</a></li>
+							<li><a href="store.html#store13" alt="인천 시청점">인청시청점</a></li>
+							<li><a href="store.html#store14" alt="인천 청라점">청라점</a></li>
+							<li><a href="store.html#store15" alt="의정부 민락점">민락점</a></li>
+						</ul>
+					</div>
+					<div class="menus nav-parent-container">
+						<div class="nav-parent-link">메뉴안내</div>
+						
+						<!-- toggle -->
+						<div class="fr pv10 pl5 pl0-l dn-l cur-pointer">
+							<span class="js-expand-carot dn-l">
+								<svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
+									<title>Expand Arrow</title>
+									<path d="M4.27 5.097L0 .827.827 0l4.27 4.27L9.174.196 10 1.02 5.098 5.924z" fill-rule="evenodd"></path>
+								</svg> 
+							</span>
+							
+							<span class="js-collapse-carot dn dn-l">
+								<svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
+									<title>Collapse Arrow</title>
+									<path d="M4.27.826L0 5.097l.827.827 4.27-4.271 4.076 4.076.827-.826L5.098 0z" fill-rule="evenodd"></path>
+								</svg> 
+							</span>
+						</div>
+									
+						<ul class="nav-child-container dn rounded-br-10">
+							<li><a href="menu.html#coffee1">COFFEE</a></li>
+							<li><a href="menu.html#beverage1">BEVERAGE</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="sign-in-out dtc-l v-mid tr-l">			
+					<div class="nav-parent-container">
+						<!-- <a class="nav-parent-link" href="/sign_in/new">Sign In</a> -->
+						<a class="nav-parent-link" href="/sign_in/new">로그인</a>
+					</div>
+					<div class="nav-parent-container">
+						<a class="nav-parent-link" href="/careers">회원가입</a>
+					</div>  
+				</div>
+			</div>
+		</div>
+		
+	</nav>
+	<!--------------------------------------------- [ 3. Franchiser Order - container ] ------------------------------------------------------>
+		<div class="container primary" id="franchiser">
+			<div class="row openStep section-1">
+				<h2>가맹점 개설 절차 안내</h2>
+				<p class="msg"></p>
+				<ol>
+					<li>개설상담</li>
+					<li>점포선정/상권분석</li>
+					<li>계약체결</li>
+					<li>매장실측/도면설계</li>
+					<li>인테리어 시공</li>
+					<li>가맹점주 교육</li>
+					<li>오픈 리허설</li>
+					<li>오픈</li>
+					<li>운영지원/사후관리</li>
+				</ol>
+			</div>
+			<div class="row price-table section-3">
+				<div class="col-md-12">
+					<h2>가맹점 개설 상세 비용</h2>
+	              	<div class="table-content">
+						<table class="responstable">	
+							<colgroup>
+							</colgroup>
+						<thead>
+	              			<tr>
+	              				<th class="wi-20p">항목</th>
+	              				<th class="wi-auto">내용</th>
+	              				<th class="wi-15p">금액</th>
+	              				<th class="wi-20p">비고</th>
+	              			</tr>
+	              		</thead>	
+	              		<tbody>
+	              			<tr>
+	              				<th rowspan="2">가맹비</th>
+	              				<td>면제</td>
+	              				<td class="text-right">5,000,000 원</td>
+	              				<td class="text-center">면제</td>
+	              			</tr>
+	              			<tr>
+	              				<td>매뉴얼 및 점포운영 전반적인 교육</td>
+	              				<td class="text-right">1,500,000 원</td>
+	              				<td class="text-center"></td>
+	              			</tr>
+	              			<tr>
+	              				<th rowspan="2">인테리어</th>
+	              				<td>목공사, 전기, 설비, 금속, 도장공사 외<br></td>
+	              				<td class="text-right">14,000,000 원</td>
+	              				<td class="text-center">추가 평당 140 만원</td>
+	              			</tr>
+	              			<tr>
+	              				<td>설계 및 도면디자인, 외관 3D</td>
+	              				<td class="text-right">2,500,000 원</td>
+	              				<td class="text-center">추가 평당 25 만원</td>
+	              			</tr>
+	              			<tr>
+	              				<th>간판 샤인</th>
+	              				<td>외부 메인 잔넬 텍스트간판 및 메뉴보드 내부 사인물 일체</td>
+	              				<td class="text-right">5,000,000 원</td>
+	              				<td class="text-center">전면 4M 기준</td>
+	              			</tr>
+	              			<tr>
+	              				<th>의탁자</th>
+	              				<td>일반테이블 11조, 바테이블 1조</td>
+	              				<td class="text-right">3,500,000 원</td>
+	              				<td class="text-center">수량에 따라 상이</td>
+	              			</tr>
+	              			<tr>
+	              				<th>기기장비</th>
+	              				<td>상급커피머신, 자동그라인더, 제빙기, 블렌더, 아이스빈, <br> 핫워터디스펜서, 냉장, 냉동고, 쇼케이스, 정수기 등</td>
+	              				<td class="text-right">18,000,000 원</td>
+	              				<td></td>
+	              			</tr>
+	              			<tr>
+	              				<th>초기물품 및 비품</th>
+	              				<td>커피관련 집기류, 식자재등 150여가지<br>오픈현수막, 유니폼, 배너, 명함, 명찰 등</td>
+	              				<td class="text-right">5,000,000 원</td>
+	              				<td class="text-center">구매 및 세팅</td>
+	              			</tr>
+	              			<tr>
+	              				<th>별도공사</th>
+	              				<td>소방, 철거, 테라스, 외부파사드, 샤시, 폴딩도어,<br> 전기증설, 냉난방기, 음향장비, POS&amp;키오스크 등</td>
+	              				<td class="text-right">18,000,000 원</td>
+	              				<td></td>
+	              			</tr>
+	              			<tr>
+	              				<th></th>
+	              				<td></td>
+	              				<td class="text-right">49,500,000 원</td>
+	              				<td></td>
+	              			</tr>
+	              			<tr>
+	              				<th>로열티</th>
+	              				<td>월 25만원</td>
+	              				<td class="text-right">250,000원</td>
+	              				<td></td>
+	              			</tr>
+	              			<tr>
+	              				<th>물품 이행보증금</th>
+	              				<td></td>
+	              				<td class="text-right">3,000,000원</td>
+	              				<td></td>
+	              			</tr>
+	              			<tr>
+	              				<th>TOTAL</th>
+	              				<td></td>
+	              				<td class="text-right">52,750,000원</td>
+	              				<td></td>
+	              			</tr>
+	              		</tbody>
+					</table>
+	              </div>
+	            </div>
+         	 </div>
+		</div>
+	</body>
+</html>

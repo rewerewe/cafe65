@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html class="us signed-out dynamic_homes dynamic_homes-show responsive">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cafe65</title>
+<!-- pavicon [ -->
+<link rel="apple-touch-icon" sizes="57x57" href="resource/icon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="resource/icon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="resource/icon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="resource/icon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="resource/icon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="resource/icon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="resource/icon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="resource/icon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="resource/icon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="resource/icon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="resource/icon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96"	href="resource/icon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16"	href="resource/icon/favicon-16x16.png">
+<link rel="manifest" href="resource/icon/manifest.json">
+<!--  ] pavicon -->
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="resource/icon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" media="all" href="resource/css/cafe65.css">
+<link rel="stylesheet" media="all" href="resource/css/franchiser.css">
+<link rel="stylesheet" href="resource/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css">
+<script type="text/javascript" src="resource/js/jquery.js"></script>
+<script type="text/javascript" src="resource/js/popper.js"></script>
+<script type="text/javascript" src="resource/js/bootstrap.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCQLvm2cSkMZKUz2b_45AHAX0YmNPLgIDY&callback=initMap0" async defer></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCQLvm2cSkMZKUz2b_45AHAX0YmNPLgIDY&callback=initMap1" async defer></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCQLvm2cSkMZKUz2b_45AHAX0YmNPLgIDY&callback=initMap2" async defer></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCQLvm2cSkMZKUz2b_45AHAX0YmNPLgIDY&callback=initMap3" async defer></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCQLvm2cSkMZKUz2b_45AHAX0YmNPLgIDY&callback=initMap4" async defer></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCQLvm2cSkMZKUz2b_45AHAX0YmNPLgIDY&callback=initMap5" async defer></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCQLvm2cSkMZKUz2b_45AHAX0YmNPLgIDY&callback=initMap6" async defer></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCQLvm2cSkMZKUz2b_45AHAX0YmNPLgIDY&callback=initMap7" async defer></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCQLvm2cSkMZKUz2b_45AHAX0YmNPLgIDY&callback=initMap8" async defer></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCQLvm2cSkMZKUz2b_45AHAX0YmNPLgIDY&callback=initMap9" async defer></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCQLvm2cSkMZKUz2b_45AHAX0YmNPLgIDY&callback=initMap10" async defer></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCQLvm2cSkMZKUz2b_45AHAX0YmNPLgIDY&callback=initMap11" async defer></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCQLvm2cSkMZKUz2b_45AHAX0YmNPLgIDY&callback=initMap12" async defer></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCQLvm2cSkMZKUz2b_45AHAX0YmNPLgIDY&callback=initMap13" async defer></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCQLvm2cSkMZKUz2b_45AHAX0YmNPLgIDY&callback=initMap14" async defer></script>
+<script type="text/javascript">
+$(init);
+
+var currLat;
+var currLng;
+
+function init() {
+	// event handler 수동 실행
+	$('#mobile-menu').trigger('click');
+	
+	// 모바일 메뉴 onclick event handler
+	$('#mobile-menu').on('click', function() {
+		var isShow = $('#responsive-menu').hasClass('responsive-menu');
+		
+		if(isShow) {
+			toggleMobileMenu(false);
+			$('#responsive-menu').removeClass('responsive-menu');
+		} else {
+			toggleMobileMenu(true);
+			$('#responsive-menu').addClass('responsive-menu');
+		}
+	});
+
+	// 자주 묻는 질문
+	faq();
+	
+	// 구글 지도
+	initMap0();
+	initMap1();
+	initMap2();
+	initMap3();
+	initMap4();
+	initMap5();
+	initMap6();
+	initMap7();
+	initMap8();
+	initMap9();
+	initMap10();
+	initMap11();
+	initMap12();
+	initMap13();
+	initMap14();
+
+	// layer popup
+	//showLayerPopup();
+}
+
+function showLayerPopup() {	
+	var cookiedata = document.cookie;    
+	if ( cookiedata.indexOf("maindiv=done") < 0 ) {  
+	    document.all['divpop'].style.visibility = 'visible';
+	} else { 
+		document.all['divpop'].style.visibility = 'hidden'; 
+	} 
+}
+
+//모바일 메뉴 노출 여부
+function toggleMobileMenu(isShow) {
+	var attr = 'none';
+	
+	if(isShow) {
+		attr = 'block';
+	}
+	
+	$('#responsive-menu').css('display', attr);
+	$('#responsive-menu').css('height', '1000px');
+	$('#responsive-menu').css('left', '0');
+	
+}
+
+// 자주 묻는 질문
+function faq() {
+	var acc = document.getElementsByClassName("accordion");
+	var i;
+
+	for (i = 0; i < acc.length; i++) {
+		acc[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var panel = this.nextElementSibling;
+			if (panel.style.display === "inline-block") {
+				panel.style.display = "none";
+			} else {
+				panel.style.display = "inline-block";
+			}
+		});
+	}
+}
+
+
+// 팝업
+function setCookie(name, value, expiredays) { 
+	var todayDate = new Date(); 
+   
+	todayDate.setDate(todayDate.getDate() + expiredays); 
+	document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";" 
+}
+	    
+function closeWin() { 
+    if (document.notice_form.chkbox.checked){ 
+        setCookie("maindiv","done",1); 
+    } 
+
+    document.all['divpop'].style.visibility = "hidden"; 
+} 
+
+//구글 지도 api & callback 함수
+function initMap0() {
+	var locations = [
+	      ['cafe65 부천남부역점', 37.53344, 126.73550],
+	      ['cafe65 부천범박점', 37.49223, 126.66767],
+	      ['cafe65 부천상동점', 37.49143, 126.74164],
+	      ['cafe65 인천가좌점', 37.49324, 126.68429],
+	      ['cafe65 인천계양점', 37.5334438, 126.7355093],
+	      ['cafe65 인천계양구청점', 37.5385584, 126.7354408],
+	      ['cafe65 인천도화하늘점', 37.4691344, 126.6611171],
+	      ['cafe65 인천부개점', 37.4926078, 126.7348263],
+	      ['cafe65 인천부평점', 37.5334438, 126.7355093],
+	      ['cafe65 인천부평시장점', 37.5050392, 126.7127266],
+	      ['cafe65 인천산곡점', 37.4958941, 126.7043612],
+	      ['cafe65 인천삼산점', 37.5153825, 126.7316555],
+	      ['cafe65 인천시청점', 37.4507599, 126.7014092],
+	      ['cafe65 인천청라점', 37.5322171, 126.6526113],
+	      ['cafe65 의정부민락점', 37.7360659, 127.0891058]
+	];
+	
+	var elementId = 'storeMap1';
+	var storeLatLng = new google.maps.LatLng(37.53344, 126.73550);
+	var storeName = 'cafe65 부천남부역점';
+	
+	var mapCenter = {
+	     zoom: 15,
+	     center: storeLatLng,
+	     mapTypeId: google.maps.MapTypeId.ROADMAP
+	}
+	var map = new google.maps.Map(document.getElementById(elementId), mapCenter);
+	
+	var marker, i;
+	for (i=0; i< locations.length; i++) {
+		marker = new google.maps.Marker({
+		    id: i,    
+			position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+			map: map
+		})
+	};
+}
+
+function initMap1() {
+	var elementId = 'storeMap2';
+	var storeLatLng = new google.maps.LatLng(37.49223, 126.66767);
+	var storeName = 'cafe65 부천범박점';
+	
+	var mapCenter = {
+	     zoom: 15,
+	     center: storeLatLng,
+	     mapTypeId: google.maps.MapTypeId.ROADMAP
+	}
+	var map = new google.maps.Map(document.getElementById(elementId), mapCenter);
+	
+	var marker = new google.maps.Marker({
+         position: storeLatLng,
+         map: map,
+         title: storeName
+	});
+}
+
+function initMap2() {
+	var elementId = 'storeMap3';
+	var storeLatLng = new google.maps.LatLng(37.49143, 126.74164);
+	var storeName = 'cafe65 부천상동점';
+	
+	var mapCenter = {
+	     zoom: 15,
+	     center: storeLatLng,
+	     mapTypeId: google.maps.MapTypeId.ROADMAP
+	}
+	var map = new google.maps.Map(document.getElementById(elementId), mapCenter);
+	
+	var marker = new google.maps.Marker({
+         position: storeLatLng,
+         map: map,
+         title: storeName
+	});
+}
+
+function initMap3() {
+	var elementId = 'storeMap4';
+	var storeLatLng = new google.maps.LatLng(37.49324, 126.68429);
+	var storeName = 'cafe65 인천가좌점';
+	
+	var mapCenter = {
+	     zoom: 15,
+	     center: storeLatLng,
+	     mapTypeId: google.maps.MapTypeId.ROADMAP
+	}
+	var map = new google.maps.Map(document.getElementById(elementId), mapCenter);
+	
+	var marker = new google.maps.Marker({
+         position: storeLatLng,
+         map: map,
+         title: storeName
+	});
+}
+
+function initMap4() {
+	var elementId = 'storeMap5';
+	var storeLatLng = new google.maps.LatLng(37.5334438, 126.7355093);
+	var storeName = 'cafe65 인천계양점';
+	
+	var mapCenter = {
+	     zoom: 15,
+	     center: storeLatLng,
+	     mapTypeId: google.maps.MapTypeId.ROADMAP
+	}
+	var map = new google.maps.Map(document.getElementById(elementId), mapCenter);
+	
+	var marker = new google.maps.Marker({
+         position: storeLatLng,
+         map: map,
+         title: storeName
+	});
+}
+
+function initMap5() {
+	var elementId = 'storeMap6';
+	var storeLatLng = new google.maps.LatLng(37.5385584, 126.7354408);
+	var storeName = 'cafe65 인천계양구청점';
+	
+	var mapCenter = {
+	     zoom: 15,
+	     center: storeLatLng,
+	     mapTypeId: google.maps.MapTypeId.ROADMAP
+	}
+	var map = new google.maps.Map(document.getElementById(elementId), mapCenter);
+	
+	var marker = new google.maps.Marker({
+         position: storeLatLng,
+         map: map,
+         title: storeName
+	});
+}
+
+function initMap6() {
+	var elementId = 'storeMap7';
+	var storeLatLng = new google.maps.LatLng(37.4691344, 126.6611171);
+	var storeName = 'cafe65 인천도화하늘점';
+	
+	var mapCenter = {
+	     zoom: 15,
+	     center: storeLatLng,
+	     mapTypeId: google.maps.MapTypeId.ROADMAP
+	}
+	var map = new google.maps.Map(document.getElementById(elementId), mapCenter);
+	
+	var marker = new google.maps.Marker({
+         position: storeLatLng,
+         map: map,
+         title: storeName
+	});
+}
+
+function initMap7() {
+	var elementId = 'storeMap8';
+	var storeLatLng = new google.maps.LatLng(37.4926078, 126.7348263);
+	var storeName = 'cafe65 인천부개점';
+	
+	var mapCenter = {
+	     zoom: 15,
+	     center: storeLatLng,
+	     mapTypeId: google.maps.MapTypeId.ROADMAP
+	}
+	var map = new google.maps.Map(document.getElementById(elementId), mapCenter);
+	
+	var marker = new google.maps.Marker({
+         position: storeLatLng,
+         map: map,
+         title: storeName
+	});
+}
+
+function initMap8() {
+	var elementId = 'storeMap9';
+	var storeLatLng = new google.maps.LatLng(37.5334438, 126.7355093);
+	var storeName = 'cafe65 인천부평점';
+	
+	var mapCenter = {
+	     zoom: 15,
+	     center: storeLatLng,
+	     mapTypeId: google.maps.MapTypeId.ROADMAP
+	}
+	var map = new google.maps.Map(document.getElementById(elementId), mapCenter);
+	
+	var marker = new google.maps.Marker({
+         position: storeLatLng,
+         map: map,
+         title: storeName
+	});
+}
+
+function initMap9() {
+	var elementId = 'storeMap10';
+	var storeLatLng = new google.maps.LatLng(37.5050392, 126.7127266);
+	var storeName = 'cafe65 인천부평시장점';
+	
+	var mapCenter = {
+	     zoom: 15,
+	     center: storeLatLng,
+	     mapTypeId: google.maps.MapTypeId.ROADMAP
+	}
+	var map = new google.maps.Map(document.getElementById(elementId), mapCenter);
+	
+	var marker = new google.maps.Marker({
+         position: storeLatLng,
+         map: map,
+         title: storeName
+	});
+}
+
+function initMap10() {
+	var elementId = 'storeMap11';
+	var storeLatLng = new google.maps.LatLng(37.4958941, 126.7043612);
+	var storeName = 'cafe65 인천산곡점';
+	
+	var mapCenter = {
+	     zoom: 15,
+	     center: storeLatLng,
+	     mapTypeId: google.maps.MapTypeId.ROADMAP
+	}
+	var map = new google.maps.Map(document.getElementById(elementId), mapCenter);
+	
+	var marker = new google.maps.Marker({
+         position: storeLatLng,
+         map: map,
+         title: storeName
+	});
+}
+
+function initMap11() {
+	var elementId = 'storeMap12';
+	var storeLatLng = new google.maps.LatLng(37.5153825, 126.7316555);
+	var storeName = 'cafe65 인천삼산점';
+	
+	var mapCenter = {
+	     zoom: 15,
+	     center: storeLatLng,
+	     mapTypeId: google.maps.MapTypeId.ROADMAP
+	}
+	var map = new google.maps.Map(document.getElementById(elementId), mapCenter);
+	
+	var marker = new google.maps.Marker({
+         position: storeLatLng,
+         map: map,
+         title: storeName
+	});
+}
+
+function initMap12() {
+	var elementId = 'storeMap13';
+	var storeLatLng = new google.maps.LatLng(37.4507599, 126.7014092);
+	var storeName = 'cafe65 인천시청점';
+	
+	var mapCenter = {
+	     zoom: 15,
+	     center: storeLatLng,
+	     mapTypeId: google.maps.MapTypeId.ROADMAP
+	}
+	var map = new google.maps.Map(document.getElementById(elementId), mapCenter);
+	
+	var marker = new google.maps.Marker({
+         position: storeLatLng,
+         map: map,
+         title: storeName
+	});
+}
+
+function initMap13() {
+	var elementId = 'storeMap14';
+	var storeLatLng = new google.maps.LatLng(37.5322171, 126.6526113);
+	var storeName = 'cafe65 인천청라점';
+	
+	var mapCenter = {
+	     zoom: 15,
+	     center: storeLatLng,
+	     mapTypeId: google.maps.MapTypeId.ROADMAP
+	}
+	var map = new google.maps.Map(document.getElementById(elementId), mapCenter);
+	
+	var marker = new google.maps.Marker({
+         position: storeLatLng,
+         map: map,
+         title: storeName
+	});
+}
+
+function initMap14() {
+	var elementId = 'storeMap15';
+	var storeLatLng = new google.maps.LatLng(37.7360659, 127.0891058);
+	var storeName = 'cafe65 의정부민락점';
+	
+	var mapCenter = {
+	     zoom: 15,
+	     center: storeLatLng,
+	     mapTypeId: google.maps.MapTypeId.ROADMAP
+	}
+	var map = new google.maps.Map(document.getElementById(elementId), mapCenter);
+	
+	var marker = new google.maps.Marker({
+         position: storeLatLng,
+         map: map,
+         title: storeName
+	});
+}
+
+function goHome() {
+	location.href = 'index.html';
+}
+</script>
+</head>
+<body class="pos-rel us signed-out dynamic_homes dynamic_homes-show responsive">
+	
+<!-----------------------------------------  1. float  ------------------------------------------------->
+	<div class="float">
+		<a href="tel:1811-7836">
+		<span class="f-color">가맹문의<br>1811-7836
+		</span>
+		</a>
+	</div>
+		
+	<!----------------------------------------- [ header ] ------------------------------------------------->
+	<div class="header no-print dn dn-l bg-white-85 pos-abs left-0 top-0 h-100 z-index-999"></div>
+	<nav class="no-print bb b--light-silver ph20 ph50-l dt dt-auto-l nav-menu-fix h-position">
+		
+		<div class="dtc v-mid tl wi-34 wi1-l pos-rel"></div>
+		
+		<!-- 브랜드로고 -->
+		<div class="dtc v-mid tc wi-34 wi-10-l pr15-l">
+			<div class="pavicon-logo" onclick="goHome();"></div>
+		</div>
+		
+		<!-- 모바일 햄버거 아이콘 -->
+		<div class="dtc v-mid tr wi-34 dn-l" id="mobile-menu" >
+			<span class="js-menu-icon fill-gray cur-pointer">
+				<svg width="25" height="18" class="dib v-mid" viewBox="0 0 25 18" xmlns="http://www.w3.org/2000/svg">
+					<title>Menu Icon</title>
+					<path d="M0 0v2.778h25V0H0zm0 7.407v2.778h25V7.407H0zm0 7.408v2.778h25v-2.778H0z" fill-rule="evenodd"></path>
+				</svg> 
+			</span>
+		</div>
+		<!-- 모바일 메뉴 -->
+		<div id="responsive-menu" style="display: none;">
+			<div id="responsive-menu-title">
+				<a href="" target="_self">CAFE 65 ℃ </a>
+			</div>
+			<div class="responsive-menu-container">
+				<ul id="responsive-menu-order" >
+					<li class="menu-item">
+						<span class="toggle-down"></span>
+						<a href="franchiser.html">프 랜 차 이 즈</a>
+					</li>
+					<li class="menu-item">
+						<span class="toggle-down"></span>
+						<a href="index.html">회 사 소 개</a>
+					</li>
+					<li class="menu-item">
+						<span class="toggle-down"></span>
+						<a href="store.html">매 장 안 내</a>
+					</li>
+					<li class="menu-item">
+						<span class="toggle-down"></span>
+						<a href="menu.html">메 뉴 안 내</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	<!----------------------------------------- 2. 메뉴 category  ------------------------------------------------->
+				<div class="category dn nav-responsive-container js-mobile-menu">
+			<div class="dt-l wi-100-l">
+				<div class="categories dtc-l pt10 pt0-l v-mid">
+				
+					<div class="franchiser nav-parent-container">
+						<a class="nav-parent-link blue-text-link heap-nav-subscribe-cta" href="franchiser.html">프랜차이즈</a>
+					</div>
+					
+					<div class="company nav-parent-container js-shop-menu">
+						<a class="nav-parent-link" href="index.html">회사소개</a>
+						
+						<!-- toggle -->
+						<div class="fr pv10 pl0-l dn-l cur-pointer">
+							<span class="js-expand-carot dn-l">
+								<svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
+										<title>Expand Arrow</title>
+								<path d="M4.27 5.097L0 .827.827 0l4.27 4.27L9.174.196 10 1.02 5.098 5.924z" fill-rule="evenodd"></path>
+								</svg>
+							</span>
+							<span class="js-collapse-carot dn dn-l">
+								<svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
+										<title>Collapse Arrow</title>
+								<path d="M4.27.826L0 5.097l.827.827 4.27-4.271 4.076 4.076.827-.826L5.098 0z" fill-rule="evenodd"></path>
+								</svg> 
+							</span>
+						</div>
+						
+						<ul class="nav-child-container dn rounded-br-10">
+							<li><a href="index.html">회사소개</a></li>
+						</ul>
+					</div>
+					
+					<div class="store nav-parent-container">
+						<div class="nav-parent-link">매장안내</div>
+						
+						<!-- toggle -->
+						<div class="fr pv10 pl5 pl0-l dn-l cur-pointer">
+							<span class="js-expand-carot dn-l">
+								<svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
+									<title>Expand Arrow</title>
+									<path d="M4.27 5.097L0 .827.827 0l4.27 4.27L9.174.196 10 1.02 5.098 5.924z" fill-rule="evenodd"></path>
+								</svg> 
+							</span>
+							
+							<span class="js-collapse-carot dn dn-l">
+								<svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
+									<title>Collapse Arrow</title>
+									<path d="M4.27.826L0 5.097l.827.827 4.27-4.271 4.076 4.076.827-.826L5.098 0z" fill-rule="evenodd"></path>
+								</svg> 
+							</span>
+						</div>
+									
+						<ul class="nav-child-container dn rounded-br-10">
+							<li><a href="store.html#store1" alt="부천 남부역점">남부역점</a></li>
+							<li><a href="store.html#store2" alt="부천 범박점">범박점</a></li>
+							<li><a href="store.html#store3" alt="부천 상동점">상동점</a></li>
+							<li><a href="store.html#store4" alt="인천 가좌점">가좌점</a></li>
+							<li><a href="store.html#store5" alt="인천 계양점">계양점</a></li>
+							<li><a href="store.html#store6" alt="인천 계양구청점">계양구청점</a></li>
+							<li><a href="store.html#store7" alt="인천 도화하늘점">도화하늘점</a></li>
+							<li><a href="store.html#store8" alt="인천 부개점">부개점</a></li>
+							<li><a href="store.html#store9" alt="인천 부평점">부평점</a></li>
+							<li><a href="store.html#store10" alt="인천 부평시장점">부평시장점</a></li>
+							<li><a href="store.html#store11" alt="인천 산곡점">산곡점</a></li>
+							<li><a href="store.html#store12" alt="인천 삼산점">삼산점</a></li>
+							<li><a href="store.html#store13" alt="인천 시청점">인청시청점</a></li>
+							<li><a href="store.html#store14" alt="인천 청라점">청라점</a></li>
+							<li><a href="store.html#store15" alt="의정부 민락점">민락점</a></li>
+						</ul>
+					</div>
+					
+					<div class="menus nav-parent-container">
+						<div class="nav-parent-link">메뉴안내</div>
+						
+						<!-- toggle -->
+						<div class="fr pv10 pl5 pl0-l dn-l cur-pointer">
+							<span class="js-expand-carot dn-l">
+								<svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
+									<title>Expand Arrow</title>
+									<path d="M4.27 5.097L0 .827.827 0l4.27 4.27L9.174.196 10 1.02 5.098 5.924z" fill-rule="evenodd"></path>
+								</svg> 
+							</span>
+							
+							<span class="js-collapse-carot dn dn-l">
+								<svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
+									<title>Collapse Arrow</title>
+									<path d="M4.27.826L0 5.097l.827.827 4.27-4.271 4.076 4.076.827-.826L5.098 0z" fill-rule="evenodd"></path>
+								</svg> 
+							</span>
+						</div>
+									
+						<ul class="nav-child-container dn rounded-br-10">
+							<li><a href="menu.html#coffee1">COFFEE</a></li>
+							<li><a href="menu.html#beverage1">BEVERAGE</a></li>
+						</ul>
+					</div>
+					
+				</div>
+				
+				<div class="sign-in-out dtc-l v-mid tr-l">			
+					<div class="nav-parent-container">
+						<!-- <a class="nav-parent-link" href="/sign_in/new">Sign In</a> -->
+						<a class="nav-parent-link" href="/sign_in/new">로그인</a>
+					</div>
+					<div class="nav-parent-container">
+						<a class="nav-parent-link" href="/careers">회원가입</a>
+					</div>  
+					
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!--------------------------------------------- [ container ] ------------------------------------------------------>
+	<!-- #1 -->
+	<div class="div-store">
+		<a name="store1"></a>
+		<div class="div-store-wrap">
+			<div class="store-img">
+				<img src="resource/img/cafe65_1200_15.jpg" alt="image1" class="img-wh dis-b"> 
+				<img src="resource/img/cafe65_1200_15.jpg" alt="image1" class="img-wh dis-n">
+			</div>
+			<div class="store-info">
+				<strong class="store-title">부천 남부역점</strong>
+				<dl class="store-datail">
+					<dt>
+						<span class="icon-style store-tel">전화번호</span>
+					</dt>
+					<dd><a href="tel:032-652-2091">032-652-2091</a></dd>
+					<dt>
+						<span class="icon-style store-time">영업시간</span>
+					</dt>
+					<dd>매일  09:00-22:00</dd>
+					<dt>
+						<span class="icon-style store-map">주소</span>
+					</dt>
+					<dd>경기 부천시 경인로 240-1</dd>
+				</dl>
+				<!-- 구글 지도 -->
+				<div id="storeMap1" class="style-store-maps"></div>
+			</div>
+		</div>
+	</div>
+	<!-- #2 -->
+	<div class="div-store">
+		<a name="store2"></a>
+		<div class="div-store-wrap">
+			<div class="store-img">
+				<img src="resource/img/cafe65_1200_14.jpg" alt="image1" class="img-wh dis-b"> 
+				<img src="resource/img/cafe65_1200_14.jpg" alt="image1" class="img-wh dis-n">
+			</div>
+			<div class="store-info">
+				<strong class="store-title">부천 범박점</strong>
+				<dl class="store-datail">
+					<dt>
+						<span class="icon-style store-tel">전화번호</span>
+					</dt>
+					<dd><a href="tel:032-343-9508">032-343-9508</a></dd>
+					<dt>
+						<span class="icon-style store-time">영업시간</span>
+					</dt>
+					<dd>매일  10:00-23:00</dd>
+					<dt>
+						<span class="icon-style store-map">주소</span>
+					</dt>
+					<dd>경기 부천시 소사구 양지남로 39 1층</dd>
+				</dl>
+				<!-- 구글 지도 -->
+				<div id="storeMap2" class="style-store-maps"></div>
+			</div>
+		</div>
+	</div>
+	<!-- #3 -->
+	<div class="div-store">
+		<a name="store3"></a>
+		<div class="div-store-wrap">
+			<div class="store-img">
+				<img src="resource/img/cafe65_1200_13.jpg" alt="image1" class="img-wh dis-b"> 
+				<img src="resource/img/cafe65_1200_13.jpg" alt="image1" class="img-wh dis-n">
+			</div>
+			<div class="store-info">
+				<strong class="store-title">부천 상동점</strong>
+				<dl class="store-datail">
+					<dt>
+						<span class="icon-style store-tel">전화번호</span>
+					</dt>
+					<dd><a href="tel:032-">032-322-9805</a></dd>
+					<dt>
+						<span class="icon-style store-time">영업시간</span>
+					</dt>
+					<dd>매일  10:00-:23:00</dd>
+					<dt>
+						<span class="icon-style store-map">주소</span>
+					</dt>
+					<dd>경기도 부천시 원미구 상일로 14-5 1층</dd>
+				</dl>
+				<!-- 구글 지도 -->
+				<div id="storeMap3" class="style-store-maps"></div>
+			</div>
+		</div>
+	</div>
+	<!-- #4 -->
+	<div class="div-store">
+		<a name="store4"></a>
+		<div class="div-store-wrap">
+			<div class="store-img">
+				<img src="resource/img/cafe65_1200_12.jpg" alt="image1" class="img-wh dis-b"> 
+				<img src="resource/img/cafe65_1200_12.jpg" alt="image1" class="img-wh dis-n">
+			</div>
+			<div class="store-info">
+				<strong class="store-title">인천 가좌점</strong>
+				<dl class="store-datail">
+					<dt>
+						<span class="icon-style store-tel">전화번호</span>
+					</dt>
+					<dd><a href="tel:032-572-7663">032-572-7663</a></dd>
+					<dt>
+						<span class="icon-style store-time">영업시간</span>
+					</dt>
+					<dd>매일  10:00-23:00</dd>
+					<dt>
+						<span class="icon-style store-map">주소</span>
+					</dt>
+					<dd>인천 서구 장고개로 337번길 16 가좌한신아파트 상가 102호 </dd>
+				</dl>
+					
+				<!-- 구글 지도 -->
+				<div id="storeMap4" class="style-store-maps"></div>
+			</div>
+		</div>
+	</div>
+	<!-- #5 -->
+	<div class="div-store">
+		<a name="store5"></a>
+		<div class="div-store-wrap">
+			<div class="store-img">
+				<img src="resource/img/cafe65_1200_11.jpg" alt="image1" class="img-wh dis-b"> 
+				<img src="resource/img/cafe65_1200_11.jpg" alt="image1" class="img-wh dis-n">
+			</div>
+				
+			<div class="store-info">
+				<strong class="store-title">인천 계양점</strong>
+				<dl class="store-datail">
+					<dt>
+						<span class="icon-style store-tel">전화번호</span>
+					</dt>
+					<dd><a href="tel:032-4530-8746">032-4530-8746</a></dd>
+					<dt>
+						<span class="icon-style store-time">영업시간</span>
+					</dt>
+					<dd>매일  10:00-02:00</dd>
+					<dt>
+						<span class="icon-style store-map">주소</span>
+					</dt>
+					<dd>인천 계양구 도두리로 14</dd>
+				</dl>
+					
+				<!-- 구글 지도 -->
+				<div id="storeMap5" class="style-store-maps"></div>
+			</div>
+		</div>
+	</div>
+	<!-- #6 -->
+	<div class="div-store">
+		<a name="store6"></a>
+		<div class="div-store-wrap">
+			<div class="store-img">
+				<img src="resource/img/cafe65_1200_10.jpg" alt="image1" class="img-wh dis-b"> 
+				<img src="resource/img/cafe65_1200_10.jpg" alt="image1" class="img-wh dis-n">
+			</div>
+				
+			<div class="store-info">
+				<strong class="store-title">인천 계양구청점</strong>
+				<dl class="store-datail">
+					<dt>
+						<span class="icon-style store-tel">전화번호</span>
+					</dt>
+					<dd><a href="tel:032-551-6232">032-551-6232</a></dd>
+					<dt>
+						<span class="icon-style store-time">영업시간</span>
+					</dt>
+					<dd>매일  10:00-23:00</dd>
+					<dt>
+						<span class="icon-style store-map">주소</span>
+					</dt>
+					<dd>인천 계양구 계산새로 71 다동1층 120호</dd>
+				</dl>
+					
+				<!-- 구글 지도 -->
+				<div id="storeMap6" class="style-store-maps"></div>
+			</div>
+		</div>
+	</div>
+	<!-- #7 -->
+	<div class="div-store">
+		<a name="store7"></a>
+		<div class="div-store-wrap">
+			<div class="store-img">
+				<img src="resource/img/cafe65_1200_09.jpg" alt="image1" class="img-wh dis-b"> 
+				<img src="resource/img/cafe65_1200_09.jpg" alt="image1" class="img-wh dis-n">
+			</div>
+				
+			<div class="store-info">
+				<strong class="store-title">인천 도화하늘점</strong>
+				<dl class="store-datail">
+					<dt>
+						<span class="icon-style store-tel">전화번호</span>
+					</dt>
+					<dd><a href="tel:010-2754-6469">010-2754-6469</a></dd>
+					<dt>
+						<span class="icon-style store-time">영업시간</span>
+					</dt>
+					<dd>매일  10:00-23:00</dd>
+					<dt>
+						<span class="icon-style store-map">주소</span>
+					</dt>
+					<dd>인천 남구 숙골로 93 106호</dd>
+				</dl>
+					
+				<!-- 구글 지도 -->
+				<div id="storeMap7" class="style-store-maps"></div>
+			</div>
+		</div>
+	</div>
+	<!-- #8 -->
+	<div class="div-store">
+		<a name="store8"></a>
+		<div class="div-store-wrap">
+			<div class="store-img">
+				<img src="resource/img/cafe65_1200_08.jpg" alt="image1" class="img-wh dis-b"> 
+				<img src="resource/img/cafe65_1200_08.jpg" alt="image1" class="img-wh dis-n">
+			</div>
+				
+			<div class="store-info">
+				<strong class="store-title">인천 부개점</strong>
+				<dl class="store-datail">
+					<dt>
+						<span class="icon-style store-tel">전화번호</span>
+					</dt>
+					<dd><a href="tel:032-7132-3031-">032-7132-3031</a></dd>
+					<dt>
+						<span class="icon-style store-time">영업시간</span>
+					</dt>
+					<dd>매일  10:00-22:00</dd>
+					<dt>
+						<span class="icon-style store-map">주소</span>
+					</dt>
+					<dd>인천 부평구 수변로 57번길 9 1층 </dd>
+				</dl>
+					
+				<!-- 구글 지도 -->
+				<div id="storeMap8" class="style-store-maps"></div>
+			</div>
+		</div>
+	</div>
+	<!-- #9 -->
+	<div class="div-store">
+		<a name="store9"></a>
+		<div class="div-store-wrap">
+			<div class="store-img">
+				<img src="resource/img/cafe65_1200_07.jpg" alt="image1" class="img-wh dis-b"> 
+				<img src="resource/img/cafe65_1200_07.jpg" alt="image1" class="img-wh dis-n">
+			</div>
+				
+			<div class="store-info">
+				<strong class="store-title">인천 부평시장점</strong>
+				<dl class="store-datail">
+					<dt>
+						<span class="icon-style store-tel">전화번호</span>
+					</dt>
+					<dd><a href="tel:032-529-6445">032-529-6445</a></dd>
+					<dt>
+						<span class="icon-style store-time">영업시간</span>
+					</dt>
+					<dd>매일  10:00-22:00</dd>
+					<dt>
+						<span class="icon-style store-map">주소</span>
+					</dt>
+					<dd>인천 부평구 시장로 32-2 1층 </dd>
+				</dl>
+					
+				<!-- 구글 지도 -->
+				<div id="storeMap9" class="style-store-maps"></div>
+			</div>
+		</div>
+	</div>
+	<!-- #10 -->
+	<div class="div-store">
+		<a name="store10"></a>
+		<div class="div-store-wrap">
+			<div class="store-img">
+				<img src="resource/img/cafe65_1200_07.jpg" alt="image1" class="img-wh dis-b"> 
+				<img src="resource/img/cafe65_1200_07.jpg" alt="image1" class="img-wh dis-n">
+			</div>
+				
+			<div class="store-info">
+				<strong class="store-title">인천 부평시장점</strong>
+				<dl class="store-datail">
+					<dt>
+						<span class="icon-style store-tel">전화번호</span>
+					</dt>
+					<dd><a href="tel:032-529-6445">032-529-6445</a></dd>
+					<dt>
+						<span class="icon-style store-time">영업시간</span>
+					</dt>
+					<dd>매일  10:00-22:00</dd>
+					<dt>
+						<span class="icon-style store-map">주소</span>
+					</dt>
+					<dd>인천 부평구 시장로 32-2 1층 </dd>
+				</dl>
+					
+				<!-- 구글 지도 -->
+				<div id="storeMap10" class="style-store-maps"></div>
+			</div>
+		</div>
+	</div>
+	<!-- #11 -->
+	<div class="div-store">
+		<a name="store11"></a>
+		<div class="div-store-wrap">
+			<div class="store-img">
+				<img src="resource/img/cafe65_1200_06.jpg" alt="image1" class="img-wh dis-b"> 
+				<img src="resource/img/cafe65_1200_06.jpg" alt="image1" class="img-wh dis-n">
+			</div>
+				
+			<div class="store-info">
+				<strong class="store-title">인천 산곡점</strong>
+				<dl class="store-datail">
+					<dt>
+						<span class="icon-style store-tel">전화번호</span>
+					</dt>
+					<dd><a href="tel:032-512-8163">032-512-8163</a></dd>
+					<dt>
+						<span class="icon-style store-time">영업시간</span>
+					</dt>
+					<dd>매일  10:00-22:00</dd>
+					<dt>
+						<span class="icon-style store-map">주소</span>
+					</dt>
+					<dd>인천 부평구 화랑북로 32-2 1층 </dd>
+				</dl>
+					
+				<!-- 구글 지도 -->
+				<div id="storeMap11" class="style-store-maps"></div>
+			</div>
+		</div>
+	</div>
+	<!-- #12 -->
+	<div class="div-store">
+		<a name="store12"></a>
+		<div class="div-store-wrap">
+			<div class="store-img">
+				<img src="resource/img/cafe65_1200_05.jpg" alt="image1" class="img-wh dis-b"> 
+				<img src="resource/img/cafe65_1200_05.jpg" alt="image1" class="img-wh dis-n">
+			</div>
+				
+			<div class="store-info">
+				<strong class="store-title">인천 삼산점</strong>
+				<dl class="store-datail">
+					<dt>
+						<span class="icon-style store-tel">전화번호</span>
+					</dt>
+					<dd><a href="tel:070-7747-6565">070-7747-6565</a></dd>
+					<dt>
+						<span class="icon-style store-time">영업시간</span>
+					</dt>
+					<dd>매일  10:00-23:00</dd>
+					<dt>
+						<span class="icon-style store-map">주소</span>
+					</dt>
+					<dd>인천 부평구 장제로 340번길 26-9 1층 </dd>
+				</dl>
+					
+				<!-- 구글 지도 -->
+				<div id="storeMap12" class="style-store-maps"></div>
+			</div>
+		</div>
+	</div>
+	<!-- #13 -->
+	<div class="div-store">
+		<a name="store13"></a>
+		<div class="div-store-wrap">
+			<div class="store-img">
+				<img src="resource/img/cafe65_1200_04.jpg" alt="image1" class="img-wh dis-b"> 
+				<img src="resource/img/cafe65_1200_04.jpg" alt="image1" class="img-wh dis-n">
+			</div>
+				
+			<div class="store-info">
+				<strong class="store-title">인천 시청점</strong>
+				<dl class="store-datail">
+					<dt>
+						<span class="icon-style store-tel">전화번호</span>
+					</dt>
+					<dd><a href="tel:032-">032-434-</a></dd>
+					<dt>
+						<span class="icon-style store-time">영업시간</span>
+					</dt>
+					<dd>매일  10:00-</dd>
+					<dt>
+						<span class="icon-style store-map">주소</span>
+					</dt>
+					<dd>인천 남동구 예술로 192번길 40 1층</dd>
+				</dl>
+					
+				<!-- 구글 지도 -->
+				<div id="storeMap13" class="style-store-maps"></div>
+			</div>
+		</div>
+	</div>
+	<!-- #14 -->
+	<div class="div-store">
+		<a name="store14"></a>
+		<div class="div-store-wrap">
+			<div class="store-img">
+				<img src="resource/img/cafe65_1200_03.jpg" alt="image1" class="img-wh dis-b"> 
+				<img src="resource/img/cafe65_1200_03.jpg" alt="image1" class="img-wh dis-n">
+			</div>
+				
+			<div class="store-info">
+				<strong class="store-title">인천 청라점</strong>
+				<dl class="store-datail">
+					<dt>
+						<span class="icon-style store-tel">전화번호</span>
+					</dt>
+					<dd><a href="tel:032-">032-567-0969</a></dd>
+					<dt>
+						<span class="icon-style store-time">영업시간</span>
+					</dt>
+					<dd>매일  10:00-24:00</dd>
+					<dt>
+						<span class="icon-style store-map">주소</span>
+					</dt>
+					<dd>인천 서구 중봉대로 586번길 19 234호</dd>
+				</dl>
+					
+				<!-- 구글 지도 -->
+				<div id="storeMap14" class="style-store-maps"></div>
+			</div>
+		</div>
+	</div>
+	<!-- #15 -->
+	<div class="div-store">
+		<a name="store15"></a>
+		<div class="div-store-wrap">
+			<div class="store-img">
+				<img src="resource/img/cafe65_1200_02.jpg" alt="image1" class="img-wh dis-b"> 
+				<img src="resource/img/cafe65_1200_02.jpg" alt="image1" class="img-wh dis-n">
+			</div>
+				
+			<div class="store-info">
+				<strong class="store-title">의정부 민락점</strong>
+				<dl class="store-datail">
+					<dt>
+						<span class="icon-style store-tel">전화번호</span>
+					</dt>
+					<dd><a href="tel:031-879-6565">031-879-6565</a></dd>
+					<dt>
+						<span class="icon-style store-time">영업시간</span>
+					</dt>
+					<dd>매일  10:00-23:00</dd>
+					<dt>
+						<span class="icon-style store-map">주소</span>
+					</dt>
+					<dd>경기 의정부시 오목로 225번길 6-18 1층 </dd>
+				</dl>
+					
+				<!-- 구글 지도 -->
+				<div id="storeMap15" class="style-store-maps"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
