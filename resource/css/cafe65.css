@@ -13596,7 +13596,7 @@ table .btn-link:hover {
 .dt {
 	display: table;
 	position: relative;
-	height: 10px;
+	height: 50px;
 }
 
 .dtc {
@@ -13721,6 +13721,7 @@ table .btn-link:hover {
 	}
 	.dt-l {
 		display: table;
+		height: 50px;
 	}
 	.dtc-l, .nav-responsive-container {
 		display: table-cell;
@@ -16946,7 +16947,7 @@ body.carts-added_to_cart .up-caret-offset {
 	display: inline-block;
 	font-size: 14px;
 	letter-spacing: 1px;
-	line-height: 0.5;
+	line-height: 24px;
 	text-transform: uppercase;
 	vertical-align: text-bottom;
 	white-space: nowrap
@@ -18775,7 +18776,6 @@ a {
 .ph20, .main-container-styles {
 	padding-left: 20px;
 	padding-right: 20px;
-	padding: 15px;
 }
 
 .m-list {
