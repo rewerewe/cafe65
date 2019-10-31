@@ -2384,117 +2384,9 @@ audio, canvas, video {
 	*zoom: 1
 }
 
-audio
+audio:not([controls]){
+	display : none;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:not
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-(
-[
-controls
-]
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-)
-{
-display
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-none
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-;
 }
 a:focus {
 	outline: thin dotted #333;
@@ -2523,12 +2415,23 @@ sub {
 
 img {
 	max-width: 100%;
-	width: auto\9;
+	width: 100%;
 	height: auto;
 	vertical-align: middle;
 	border: 0;
 	-ms-interpolation-mode: bicubic
 }
+
+@media (min-width: 1024px){
+	img {
+		max-width: 100%;
+		width: auto;
+		height: auto;
+		vertical-align: middle;
+		border: 0;
+		-ms-interpolation-mode: bicubic
+	}
+} 
 
 #map_canvas img, .google-maps img {
 	max-width: none
@@ -13721,7 +13624,7 @@ table .btn-link:hover {
 	}
 	.dt-l {
 		display: table;
-		height: 50px;
+		height: 60px;	/* header-menu height */
 	}
 	.dtc-l, .nav-responsive-container {
 		display: table-cell;
@@ -16947,7 +16850,7 @@ body.carts-added_to_cart .up-caret-offset {
 	display: inline-block;
 	font-size: 14px;
 	letter-spacing: 1px;
-	line-height: 24px;
+	line-height: 50px;		/* header-menu empty space position */
 	text-transform: uppercase;
 	vertical-align: text-bottom;
 	white-space: nowrap
@@ -18705,7 +18608,7 @@ a {
 		padding-right: 0px;
 	}
 	.panel .pl-100 {
-		padding-left: 0px;
+		padding-left: 0px !important;
 	}
 }
 
@@ -18788,6 +18691,10 @@ a {
 	position: relative;
 }
 
+.mt-30 {
+	margin-top: 30px;
+}
+
 .mt-50 {
 	margin-top: 50px;
 }
@@ -18796,8 +18703,9 @@ a {
 	position: absolute;
 	top: -75px;
 	padding-top: 10px;
-	width: 80px;
-	height: 40px;
+	margin-left: 20px;
+	width: 30%;
+	height: 100%;
 	font-size: 13px;
 	color: #fff;
 	background: #4DBDE7;
@@ -18823,9 +18731,19 @@ a {
 
 .img-wh {
 	display: block;
-	width: 800px;
+	width: 50%;
 	height: auto;
 	border-radius: 6px;
+}
+
+@media(min-width:1024px) {
+	.img-wh {
+		display: block;
+		width: 100%;
+		height: auto;
+		border-radius: 6px;
+	}
+	
 }
 
 .dis-b {
@@ -18933,7 +18851,7 @@ a {
 
 .store-info .style-store-maps {
 	display: block;
-	position: absolute;
+	position: relative;
 	right: 40px;
 	top: 40px;
 	width: 400px;
@@ -18953,7 +18871,7 @@ a {
 .div-menu {
 	overflow: hidden;
 	width: 800px;
-	margin: 10px auto 10px;
+	margin: 30px auto 10px;
 }
 
 .div-video {
@@ -19019,7 +18937,7 @@ a {
 
 .responsive-menu {
 	position: absolute;
-    width: 50%;
+    width: 65%;
     top: 0px;
     left: 0;
     background: #fff;
